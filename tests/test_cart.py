@@ -7,6 +7,16 @@ from aims.dvd import DigitalVideoDisc
 
 
 class CartTests(unittest.TestCase):
+    def test_sort_by_title_and_cost(self):
+        cart = Cart()
+        with contextlib.redirect_stdout(io.StringIO()):
+            cart.add_dvd(DigitalVideoDisc("Zebra", cost=5))
+            cart.add_dvd(DigitalVideoDisc("apple", cost=10))
+        cart.sort_by_title()
+        self.assertEqual(["apple", "Zebra"], [dvd.title for dvd in cart.items])
+        cart.sort_by_cost()
+        self.assertEqual(["Zebra", "apple"], [dvd.title for dvd in cart.items])
+
     def test_discounted_total_and_invalid_percent(self):
         cart = Cart()
         with contextlib.redirect_stdout(io.StringIO()):
