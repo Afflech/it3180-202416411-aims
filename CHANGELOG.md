@@ -9,6 +9,12 @@
 - Sắp xếp giỏ hàng theo tiêu đề hoặc giá.
 - Tìm DVD theo thể loại.
 
+## [1.0.1] - 2026-11-06
+
+### Fixed
+
+- Tìm DVD theo tiêu đề không phân biệt chữ hoa, chữ thường.
+
 ## [1.0.0] - 2026-11-06
 
 ### Added
